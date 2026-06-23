@@ -145,26 +145,54 @@ body.cute-mode .section-title h2{background:linear-gradient(135deg,#e91e63,#f062
 .settings-group .badge-count{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(255,107,107,.15);color:var(--red)}
 
 /* ─── Cute Mode / Easter Egg ─── */
-body.cute-mode{--gold:#e91e63;--gold-dim:#d81b60;--cyan:#ec407a;--cyan-dim:#c2185b;--bg:#fce4ec;--bg2:#f8bbd0;--card:#fff0f5;--card-hover:#ffe4ec;--text:#4a1a2e;--text-dim:#8c5a6a;--shadow:0 8px 40px rgba(0,0,0,.1)}
-body.cute-mode .stem{border-left-color:#f06292}
-body.cute-mode .result-bar.correct{background:rgba(233,30,99,.1);border-color:rgba(233,30,99,.2)}
-body.cute-mode .result-bar.wrong{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.2)}
-body.cute-mode .stat-bar .fill.good{background:linear-gradient(90deg,#e91e63,#f06292)}
-body.cute-mode .stat-card .num{background:linear-gradient(135deg,#e91e63,#f06292);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-body.cute-mode .btn-gold{background:linear-gradient(135deg,#ec407a,#f06292);color:#fff}
-body.cute-mode .btn-gold:hover{box-shadow:0 8px 24px rgba(233,30,99,.3)}
-body.cute-mode .subject-card h3{color:#e91e63}
-body.cute-mode .subject-card:hover{border-color:rgba(233,30,99,.25)}
-body.cute-mode .progress-bar .fill{background:linear-gradient(90deg,#e91e63,#f06292)}
-body.cute-mode .header .nav-links a.active{color:#e91e63;border-bottom-color:#e91e63}
-body.cute-mode .header .nav-links a:hover{color:#e91e63}
-body.cute-mode .option-btn:hover{border-color:#f06292}
-#styleToggle{font-size:13px;background:transparent;border:1px solid var(--text-dim);color:var(--text-dim);border-radius:16px;padding:4px 12px;cursor:pointer;transition:all .3s;font-family:inherit}
+body.cute-mode{--bg:#fef6fb;--bg2:#fce9f0;--card:#fff5f9;--card-hover:#ffeef3;--gold:#e84393;--gold-dim:#d63384;--cyan:#fd79a8;--cyan-dim:#e84393;--green:#fd79a8;--red:#ff6b6b;--text:#5a1a3a;--text-dim:#a8638a;--radius:20px;--shadow:0 8px 40px rgba(233,30,99,.08);font-family:-apple-system,'PingFang SC','Microsoft YaHei','Helvetica Neue','Rounded Mplus 1c',sans-serif}
+body.cute-mode .subject-card{border-radius:20px;border:2px solid rgba(233,30,99,.06);position:relative;overflow:hidden}
+body.cute-mode .subject-card::before{content:'🌸';position:absolute;top:-8px;right:-8px;font-size:28px;opacity:.3;transform:rotate(15deg)}
+body.cute-mode .subject-card:hover{transform:translateY(-4px) scale(1.01);border-color:rgba(233,30,99,.2);box-shadow:0 12px 40px rgba(233,30,99,.12)}
+body.cute-mode .subject-card h3{color:#e84393;font-size:18px}
+body.cute-mode .subject-card .info{color:#a8638a}
+body.cute-mode .progress-bar{background:rgba(233,30,99,.08);border-radius:10px;height:6px}
+body.cute-mode .progress-bar .fill{background:linear-gradient(90deg,#e84393,#fd79a8);border-radius:10px;height:6px}
+body.cute-mode .stat-card{border-radius:20px;border:2px solid rgba(233,30,99,.06);background:var(--card)}
+body.cute-mode .stat-card .num{background:linear-gradient(135deg,#e84393,#fd79a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body.cute-mode .stat-card .label{color:#a8638a}
+body.cute-mode .stem{border-left-color:#fd79a8;border-left-width:4px;border-radius:16px;background:rgba(233,30,99,.03);padding:20px;color:#5a1a3a}
+body.cute-mode .option-btn{border-radius:14px;border:2px solid rgba(233,30,99,.08);background:var(--card);color:#5a1a3a;padding:14px 18px}
+body.cute-mode .option-btn:hover{border-color:#fd79a8;background:rgba(233,30,99,.04);transform:translateY(-2px)}
+body.cute-mode .option-btn .letter{background:rgba(233,30,99,.08);color:#e84393;width:30px;height:30px;border-radius:50%;font-size:14px}
+body.cute-mode .option-btn.selected{border-color:#e84393;background:rgba(233,30,99,.08)}
+body.cute-mode .option-btn.selected .letter{background:#e84393;color:#fff}
+body.cute-mode .option-btn.correct{border-color:#fd79a8;background:rgba(233,30,99,.06)}
+body.cute-mode .option-btn.correct .letter{background:#fd79a8;color:#fff}
+body.cute-mode .option-btn.wrong{background:rgba(255,107,107,.06);border-color:#ff6b6b}
+body.cute-mode .option-btn.wrong .letter{background:#ff6b6b;color:#fff}
+body.cute-mode .header .nav-links a{color:#a8638a}
+body.cute-mode .header .nav-links a:hover{color:#e84393}
+body.cute-mode .header .nav-links a.active{color:#e84393;border-bottom-color:#e84393}
+body.cute-mode .btn-gold{background:linear-gradient(135deg,#e84393,#fd79a8);color:#fff;border-radius:12px}
+body.cute-mode .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,30,99,.25)}
+body.cute-mode .btn-cyan{background:linear-gradient(135deg,#fd79a8,#f8a5c2);color:#fff;border-radius:12px}
+body.cute-mode .btn-cyan:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,30,99,.2)}
+body.cute-mode .btn-outline{border-radius:12px;border-color:rgba(233,30,99,.15)!important;color:#a8638a}
+body.cute-mode .btn-outline:hover{border-color:#e84393!important;color:#e84393}
+body.cute-mode .result-bar{border-radius:14px}
+body.cute-mode .result-bar.correct{background:rgba(233,30,99,.06);color:#e84393;border-color:rgba(233,30,99,.15)}
+body.cute-mode .result-bar.wrong{background:rgba(255,107,107,.06);color:#ff6b6b;border-color:rgba(255,107,107,.15)}
+body.cute-mode .header .logo{background:linear-gradient(135deg,#e84393,#fd79a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body.cute-mode .section-title h2{background:linear-gradient(135deg,#e84393,#fd79a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body.cute-mode .section-title .ornament{background:linear-gradient(90deg,#e84393,#fd79a8,#e84393);height:4px;border-radius:2px;width:80px}
+body.cute-mode .settings-group{border-radius:14px}
+body.cute-mode .modal{border-radius:22px}
+body.cute-mode .progress-track{background:rgba(233,30,99,.08);border-radius:8px;height:6px}
+body.cute-mode .progress-track .fill{background:linear-gradient(90deg,#e84393,#fd79a8);border-radius:8px}
+#styleToggle{font-size:12px;background:transparent;border:1.5px solid var(--text-dim);color:var(--text-dim);border-radius:20px;padding:5px 14px;cursor:pointer;transition:all .3s;font-family:inherit;line-height:1.4}
 #styleToggle:hover{border-color:var(--gold);color:var(--gold)}
-body.cute-mode #styleToggle{border-color:#f06292;color:#e91e63}
-body.cute-mode #styleToggle:hover{background:rgba(233,30,99,.1)}
+body.cute-mode #styleToggle{border-color:#e84393;color:#e84393;background:rgba(233,30,99,.04)}
 
-/* ─── Responsive ─── */
+/* ─── Cute Sparkles ─── */
+#sparkleLayer{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
+.sparkle{position:absolute;font-size:16px;animation:sparkleFall linear infinite;opacity:0}
+@keyframes sparkleFall{0%{transform:translateY(-20px) rotate(0deg);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(100vh) rotate(360deg);opacity:0}}
 @media(max-width:600px){
   .app{padding:16px 12px 80px}
   .subjects{grid-template-columns:1fr 1fr;gap:12px}
@@ -255,15 +283,26 @@ body.cute-mode #styleToggle:hover{background:rgba(233,30,99,.1)}
     </div>
   </div>
 
+  <!-- Sparkle Layer -->
+  <div id="sparkleLayer"></div>
+
   <!-- Easter Egg Modal -->
   <div class="modal-overlay" id="eggModal">
-    <div class="modal cute-modal">
-      <div class="hearts">💗 💖 💕</div>
-      <h3>🎉 恭喜宝宝！</h3>
-      <p>你已完成 52 道题啦！<br>解锁了专属于你的 <strong>可爱风格</strong> 💝<br>点下面的按钮切换试试看～</p>
-      <button class="btn-gold" onclick="enableCuteMode()" style="padding:10px 28px;font-size:15px;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-family:inherit">🎀 切换可爱风格</button>
+    <div class="modal" style="background:linear-gradient(145deg,#fff5f9,#fce9f0);border:2px solid #fd79a8;text-align:center;border-radius:24px;max-width:420px">
+      <div style="font-size:48px;margin:10px 0 6px">🌸💗🌸</div>
+      <h3 style="color:#e84393;font-size:24px;margin-bottom:10px">🎀 恭喜宝宝！</h3>
+      <p style="color:#5a1a3a;font-size:15px;line-height:2">
+        你已经完成 <strong style="color:#e84393;font-size:20px">52</strong> 道题啦！🥳<br>
+        解锁了专属于你的<br>
+        <strong style="color:#e84393;font-size:18px">✨ 可爱风格 ✨</strong>
+      </p>
+      <p style="color:#a8638a;font-size:13px;margin-bottom:18px">点下面按钮切换试试看～</p>
+      <button class="btn-gold" onclick="enableCuteMode()" style="padding:12px 32px;font-size:16px;border:none;border-radius:16px;cursor:pointer;font-weight:700;font-family:inherit;letter-spacing:1px">
+        🎀 切换可爱风格
+      </button>
       <br><br>
-      <button onclick="closeEggModal()" style="background:none;border:none;color:#8c5a6a;cursor:pointer;font-size:13px;font-family:inherit">下次再说</button>
+      <button onclick="closeEggModal()" style="background:none;border:none;color:#a8638a;cursor:pointer;font-size:13px;font-family:inherit;text-decoration:underline">下次再说</button>
+      <div style="font-size:28px;margin-top:12px">💕 🎀 💖</div>
     </div>
   </div>
 
@@ -1048,6 +1087,24 @@ function resetWrong() {
 // ═══════════════════════════════════════════════════════════
 const EGG_KEY = 'yaoli_egg_shown';
 const CUTE_KEY = 'yaoli_cute_mode';
+const SPARKLES = ['🌸','💗','✨','🦋','🌷','💕','🫧','🎀'];
+
+function startSparkles() {
+  const layer = document.getElementById('sparkleLayer');
+  if (!layer) return;
+  layer.innerHTML = '';
+  for (let i = 0; i < 12; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.textContent = SPARKLES[Math.floor(Math.random() * SPARKLES.length)];
+    s.style.left = Math.random() * 100 + '%';
+    s.style.animationDuration = (8 + Math.random() * 12) + 's';
+    s.style.animationDelay = (Math.random() * 12) + 's';
+    s.style.fontSize = (12 + Math.random() * 14) + 'px';
+    layer.appendChild(s);
+  }
+}
+function stopSparkles() { const l = document.getElementById('sparkleLayer'); if(l) l.innerHTML = ''; }
 
 function checkEasterEgg() {
   let total = 0;
@@ -1074,8 +1131,9 @@ function enableCuteMode() {
 function applyCuteMode() {
   if (localStorage.getItem(CUTE_KEY)) {
     document.body.classList.add('cute-mode');
+    startSparkles();
     const btn = document.getElementById('styleToggle');
-    if (btn) { btn.textContent = '😎 暗色'; btn.style.display = 'inline-block'; }
+    if (btn) { btn.textContent = '\u{1F60E} 暗色'; btn.style.display = 'inline-block'; }
   }
 }
 
@@ -1083,11 +1141,13 @@ function toggleStyle() {
   if (document.body.classList.contains('cute-mode')) {
     document.body.classList.remove('cute-mode');
     localStorage.removeItem(CUTE_KEY);
-    document.getElementById('styleToggle').textContent = '🎀 可爱';
+    document.getElementById('styleToggle').textContent = '\u{1F380} 可爱';
+    stopSparkles();
   } else {
     document.body.classList.add('cute-mode');
     localStorage.setItem(CUTE_KEY, '1');
-    document.getElementById('styleToggle').textContent = '😎 暗色';
+    document.getElementById('styleToggle').textContent = '\u{1F60E} 暗色';
+    startSparkles();
   }
 }
 
