@@ -13,6 +13,10 @@
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;background:#080818;color:#e8e6f0;overflow-x:hidden;line-height:1.7}
 :root{--bg:#080818;--bg2:#0d0d24;--card:#12122e;--card-hover:#1a1a3a;--gold:#d4a853;--gold-dim:#b8923a;--cyan:#00d4ff;--cyan-dim:#009dbb;--green:#4ade80;--red:#ff6b6b;--text:#e8e6f0;--text-dim:#9896b0;--radius:16px;--shadow:0 8px 40px rgba(0,0,0,.5)}
+body.cute-mode{--bg:#fce4ec;--bg2:#f8bbd0;--card:#fff0f5;--card-hover:#ffe4ec;--gold:#e91e63;--gold-dim:#d81b60;--cyan:#ec407a;--cyan-dim:#c2185b;--green:#66bb6a;--red:#ef5350;--text:#4a1a2e;--text-dim:#8c5a6a;--shadow:0 8px 40px rgba(0,0,0,.1)}
+body.cute-mode .option-btn .letter{color:var(--text-dim)}
+body.cute-mode .header .logo{background:linear-gradient(135deg,#e91e63,#f06292);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body.cute-mode .section-title h2{background:linear-gradient(135deg,#e91e63,#f06292);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:2px}
@@ -140,6 +144,26 @@ body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Helvetica Neue',
 .settings-group input[type=number]:focus{border-color:var(--gold)}
 .settings-group .badge-count{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;background:rgba(255,107,107,.15);color:var(--red)}
 
+/* ─── Cute Mode / Easter Egg ─── */
+body.cute-mode{--gold:#e91e63;--gold-dim:#d81b60;--cyan:#ec407a;--cyan-dim:#c2185b;--bg:#fce4ec;--bg2:#f8bbd0;--card:#fff0f5;--card-hover:#ffe4ec;--text:#4a1a2e;--text-dim:#8c5a6a;--shadow:0 8px 40px rgba(0,0,0,.1)}
+body.cute-mode .stem{border-left-color:#f06292}
+body.cute-mode .result-bar.correct{background:rgba(233,30,99,.1);border-color:rgba(233,30,99,.2)}
+body.cute-mode .result-bar.wrong{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.2)}
+body.cute-mode .stat-bar .fill.good{background:linear-gradient(90deg,#e91e63,#f06292)}
+body.cute-mode .stat-card .num{background:linear-gradient(135deg,#e91e63,#f06292);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body.cute-mode .btn-gold{background:linear-gradient(135deg,#ec407a,#f06292);color:#fff}
+body.cute-mode .btn-gold:hover{box-shadow:0 8px 24px rgba(233,30,99,.3)}
+body.cute-mode .subject-card h3{color:#e91e63}
+body.cute-mode .subject-card:hover{border-color:rgba(233,30,99,.25)}
+body.cute-mode .progress-bar .fill{background:linear-gradient(90deg,#e91e63,#f06292)}
+body.cute-mode .header .nav-links a.active{color:#e91e63;border-bottom-color:#e91e63}
+body.cute-mode .header .nav-links a:hover{color:#e91e63}
+body.cute-mode .option-btn:hover{border-color:#f06292}
+#styleToggle{font-size:13px;background:transparent;border:1px solid var(--text-dim);color:var(--text-dim);border-radius:16px;padding:4px 12px;cursor:pointer;transition:all .3s;font-family:inherit}
+#styleToggle:hover{border-color:var(--gold);color:var(--gold)}
+body.cute-mode #styleToggle{border-color:#f06292;color:#e91e63}
+body.cute-mode #styleToggle:hover{background:rgba(233,30,99,.1)}
+
 /* ─── Responsive ─── */
 @media(max-width:600px){
   .app{padding:16px 12px 80px}
@@ -158,6 +182,7 @@ body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Helvetica Neue',
   <!-- ═══ Header ═══ -->
   <div class="header">
     <div class="logo">📚 药理学刷题</div>
+      <button id="styleToggle" onclick="toggleStyle()" style="display:none">🎀 可爱</button>
     <div class="nav-links">
       <a class="active" onclick="showPage('home')" id="navHome">科目</a>
       <a onclick="showPage('stats')" id="navStats">统计</a>
@@ -227,6 +252,18 @@ body{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Helvetica Neue',
         <button onclick="closeResetModal()" style="background:none;border:none;color:var(--text-dim);font-size:20px;cursor:pointer">✕</button>
       </div>
       <div id="resetModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Easter Egg Modal -->
+  <div class="modal-overlay" id="eggModal">
+    <div class="modal cute-modal">
+      <div class="hearts">💗 💖 💕</div>
+      <h3>🎉 恭喜宝宝！</h3>
+      <p>你已完成 52 道题啦！<br>解锁了专属于你的 <strong>可爱风格</strong> 💝<br>点下面的按钮切换试试看～</p>
+      <button class="btn-gold" onclick="enableCuteMode()" style="padding:10px 28px;font-size:15px;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-family:inherit">🎀 切换可爱风格</button>
+      <br><br>
+      <button onclick="closeEggModal()" style="background:none;border:none;color:#8c5a6a;cursor:pointer;font-size:13px;font-family:inherit">下次再说</button>
     </div>
   </div>
 
@@ -1006,8 +1043,69 @@ function resetWrong() {
   renderWrong();
 }
 
+// ═══════════════════════════════════════════════════════════
+// Easter Egg: Cute Mode
+// ═══════════════════════════════════════════════════════════
+const EGG_KEY = 'yaoli_egg_shown';
+const CUTE_KEY = 'yaoli_cute_mode';
+
+function checkEasterEgg() {
+  let total = 0;
+  DATA.forEach(s => { const p = state[s.id]; if (p) total += p.done || 0; });
+  if (total >= 52 && !localStorage.getItem(EGG_KEY) && !localStorage.getItem(CUTE_KEY)) {
+    setTimeout(() => document.getElementById('eggModal').classList.add('show'), 500);
+  }
+}
+
+function closeEggModal() {
+  document.getElementById('eggModal').classList.remove('show');
+  localStorage.setItem(EGG_KEY, '1');
+  const btn = document.getElementById('styleToggle');
+  if (btn) btn.style.display = 'inline-block';
+}
+
+function enableCuteMode() {
+  localStorage.setItem(CUTE_KEY, '1');
+  localStorage.setItem(EGG_KEY, '1');
+  document.getElementById('eggModal').classList.remove('show');
+  applyCuteMode();
+}
+
+function applyCuteMode() {
+  if (localStorage.getItem(CUTE_KEY)) {
+    document.body.classList.add('cute-mode');
+    const btn = document.getElementById('styleToggle');
+    if (btn) { btn.textContent = '😎 暗色'; btn.style.display = 'inline-block'; }
+  }
+}
+
+function toggleStyle() {
+  if (document.body.classList.contains('cute-mode')) {
+    document.body.classList.remove('cute-mode');
+    localStorage.removeItem(CUTE_KEY);
+    document.getElementById('styleToggle').textContent = '🎀 可爱';
+  } else {
+    document.body.classList.add('cute-mode');
+    localStorage.setItem(CUTE_KEY, '1');
+    document.getElementById('styleToggle').textContent = '😎 暗色';
+  }
+}
+
+function patchSaveAnswer() {
+  const orig = saveAnswer;
+  saveAnswer = function(q, correct, letter) {
+    orig(q, correct, letter);
+    checkEasterEgg();
+  };
+}
+
 // ─── Init on load ───
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', function() {
+  init();
+  applyCuteMode();
+  patchSaveAnswer();
+  checkEasterEgg();
+});
 </script>
 </body>
 </html>
